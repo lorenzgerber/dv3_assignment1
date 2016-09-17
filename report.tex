@@ -8,6 +8,7 @@
 \usepackage[pdftex]{graphicx}   % allows including pdf figures
 \usepackage{listings}
 \usepackage{pgf-umlcd}
+\usepackage{amsmath}
 %\usepackage{lmodern}   % Optional fonts. (not necessary)
 %\usepackage{tabularx}
 %\usepackage{microtype} % Provides some typographic improvements over default settings
@@ -62,15 +63,26 @@
 \clearpage
 \pagenumbering{arabic}
 
-\section{Introduction} 
-The assignment was described on the course homepage
+\section{Problem 1} 
+Assume that L is a regular language. Strings w of language L are constructed according to the specification where zero, one or several `a's and zero, one or several `b's are mixed freely as long as there are more `b's than `a's in it. Let's have a look at such a generic string and how it can be split into three parts xyz such that xy is shorter than m, x is 1 or larger and all xyiz are part of L for all i e N. Independent of how m is chosen, if y contains more a than b, which according to the language definition is possible,  the resulting strings for xyiz i e N are no longer part of L. Hence, proven by contradiction, L can not be a regular language. 
 
-\section{Unified Modelling Language Class Diagram}
-bla bla bal
+\section{Problem 2}
+Assume that L is a regular language. Strings w of language L are constructed according to the specification as $a^n$ with n being a prime number equal or larger than 2. For every prime n, there has to be a number m which is smaller than n, and that multiplied with any natural number plus the difference of p and m will be a prime. Such a number does not exist. Hence, L can not be a regular language. 
+ 
 
-\section{Class Descriptions and Pseudo Code}
+\section{Problem 3}
+Conversion of context free grammar into Chomsky normal form:
+
+\begin{flalign*}
+&S \rightarrow aAB\\
+&A \rightarrow aAa\\
+&A \rightarrow bb\\
+&B \rightarrow a \\
+\end{flalign*}
 
 
+\section{Problem 4}
+shuffle shuffle
 
 
 \addcontentsline{toc}{section}{\refname}
