@@ -10,6 +10,7 @@
 \usepackage{pgf-umlcd}
 \usepackage{amsmath}
 \usepackage{amsfonts}
+\usepackage{amssymb}
 %\usepackage{lmodern}   % Optional fonts. (not necessary)
 %\usepackage{tabularx}
 %\usepackage{microtype} % Provides some typographic improvements over default settings
@@ -24,7 +25,7 @@
 \coursecode{5DV162}
 \title{Assignment 1}
 \author{Lorenz Gerber ({\tt{dv15lgr@cs.umu.se}}, {\tt{lozger03@student.umu.se})}}
-\date{2016-09-16}
+\date{2016-09-20}
 %\revisiondate{2016-01-18}
 \instructor{Henrik Björklund}
 
@@ -74,7 +75,24 @@ Assume that $L$ is a regular language. Strings $w$ of language $L$ are construct
 
 \section*{Problem 2}
 Assume that $L$ is a regular language. Strings $w$ of language $L$ are constructed according to the specification as $a^n$ with $n$ being a prime number equal or larger than $2$. For every prime $n$, there has to be a number $m$ which is smaller than $n$, and that multiplied with any natural number plus the difference $n - m$ will be a prime. Such a number does not exist. Hence, L can not be a regular language. 
+
+The above is my initial solution. After some research on the net I
+happend to find an exact formal solution to the problem \cite{pumpprime}. It took some
+time until I understood it but now I do and therefore I reproduce it
+here, though,  admitting that I probably could not have come up with it by
+myself. 
  
+\begin{enumerate}
+\item Assume $L$ is regular, hence there has to be an $m$
+\item choose a word $w=a^{n}$ where $n$ is a prime and $|xyz| = n >
+  m+1$ (comment: The `$m+1$' part seems to be the critical assumption which I hardly could have come up with).
+\item as $|xy| \leqslant m$ it follows that $|z| > 1$
+\item as $|z| > 1$ it follows that $|xy| > 1$. Now choose $i =
+  |xy|$. Then $|xy^{i}z| = |xy|+|y||xz|=(1+|y|)$. As $(1+|y|)$  and
+  $|xy|$ are both greater than 1, the product must be a composite
+  number. Hence$|xy^{i}z|$ is a composite number and not a prime.
+\end{enumerate}
+
 
 \section*{Problem 3}
 Conversion of context free grammar into Chomsky normal form:
@@ -124,7 +142,7 @@ Proving that the resulting Language $Ls$ from shuffeling the regular languages $
 
 The idea is to construct a NFA from NFA/DFA's that accept $L1$ and $L2$. Let's assume The wordlength of $L1$ and $L2$ is $|w1|$ and $|w2|$, hence the NFA/DFA to accept $L1$ or $L2$ will have $u_{1} \ldots u_{|w1|}$ respectively $v_{1} \ldots v_{|w2|}$ states. Now, for example state u1 is split into $|w1|$ substates to `remember' how many states of NFA 2 already have been passed. The same is done for all states of the NFA 1 and 2. Hence the new NFA will in this case have 18 + 2 states (18 + start and accepted end state). All inbound transitions are the same as in the initial NFA's. Hence it has been proven by construction of a new NFA that the shuffle of $L1$ and $L2$ is also a regular language.
 
-The solution is shown in figure 1 produced with graphviz. Figure 2 shows a hand draft of the same figure, but with a more clear grouping.
+The solution is shown in figure 1 produced with graphviz \cite{graphviz}. Figure 2 shows a hand draft of the same figure, but with a more clear grouping.
 
 \begin{figure}
   \centering
@@ -141,7 +159,7 @@ The solution is shown in figure 1 produced with graphviz. Figure 2 shows a hand 
 \end{figure}
 
 \addcontentsline{toc}{section}{\refname}
-%\bibliography{references}
+\bibliography{references}
 
 \end{document}
  
