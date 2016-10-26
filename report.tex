@@ -64,7 +64,12 @@
 \clearpage
 \pagenumbering{arabic}
 
-\section*{Problem 1} 
+\section*{Problem 1}
+Assume $L$ is a regular language. Then a word in $L$ of length at least $p$ can be divided into three parts and satisfies the three conditions according to the pumping lemma for regular languages. This shall be investigated on the following word $a^{p}b^{p}$ where $p$ is the pumping length.
+
+
+
+
 Assume that $L$ is a regular language. Strings $w$ of language $L$ are constructed according to the specification where zero, one or several $a$'s and zero, one or several $b$s are mixed freely as long as there are more $b$'s than $a$'s in it. Let's have a look at such a generic string and how it can be split into three parts $xyz$ such that $xy$ is shorter than $m$, $x$ is $1$ or larger and all $xy^{i}z$ are part of $L$ for all $i \in \mathbb{N}$. Independent of how $m$ is chosen, if $y$ contains more $a$'s than $b$'s, which according to the language definition is possible,  the resulting strings for $xy^{i}z$ $i \in \mathbb{N}$  are for large enough $i$ no longer part of $L$. Hence, proven by contradiction, $L$ can not be a regular language. 
 
 \section*{Problem 2}
